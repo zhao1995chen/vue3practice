@@ -4,13 +4,106 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vue 起手式</title>
+    <title>六角 Vue3 夏令營</title>
+    <link rel="icon" type="image/png" href="https://v3.vuejs.org/logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <script>
-      window.onload = function () {
-        window.location.pathname = '/vue3practice/week1/level1';
-      };
-    </script>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title fw-bold lh-lg">Week1 作業內容</h2>
+              <div class="card-text">
+                <p>透過資料內容呈現多筆資料列表</p>
+                <ul>
+                  <li>
+                    資料來源：
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://randomuser.me/"
+                      >https://randomuser.me/</a
+                    >
+                  </li>
+                  <li>需要使用 v-for 呈現多筆資料</li>
+                  <li>
+                    需要呈現至少 5 個物件內的屬性值
+                    <ul>
+                      <li>文字、圖片、連結等</li>
+                    </ul>
+                  </li>
+                  <li>嘗試使用 v-on 來進行資料的切換</li>
+                </ul>
+              </div>
+              <div class="card-subtitle fw-bold mb-2">挑戰等級</div>
+              <div class="card-text">
+                <ul>
+                  <li>LV1：透過課程版型完成範例</li>
+                  <li>
+                    LV2：在 mounted 生命週期中，透過 Ajax 取得
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://randomuser.me/"
+                      >https://randomuser.me/</a
+                    >
+                    遠端資料，重新渲染至畫面上
+                  </li>
+                  <li>LV3：包含 Ajax 並自創版型完成此挑戰</li>
+                </ul>
+              </div>
+              <div class="card-subtitle fw-bold mb-2">版型及範例</div>
+              <div class="card-text">
+                <ul>
+                  <li>
+                    版型連結：
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="https://github.com/hexschool/summer-camp-vue3/blob/master/week1/template.html"
+                      >https://github.com/hexschool/summer-camp-vue3/blob/master/week1/template.html</a
+                    >
+                  </li>
+                  <li>
+                    作品範例：
+                    <a
+                      href="https://github.com/hexschool/summer-camp-vue3/blob/master/week1/index.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >https://github.com/hexschool/summer-camp-vue3/blob/master/week1/index.html</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="card-subtitle fw-bold mb-2">成品</div>
+              <div class="btn-group" role="group">
+                <a
+                  class="btn btn-outline-primary"
+                  href="/vue3practice/week1/level1/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Level 1</a
+                >
+                <a
+                  class="btn btn-outline-primary"
+                  href="/vue3practice/week1/level2/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Level 2</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script></script>
   </body>
 </html>
