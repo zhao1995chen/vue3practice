@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Week1 Level2</title>
+    <link rel="icon" type="image/png" href="https://v3.vuejs.org/logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="row justify-content-between mt-5 mb-5">
+          <div class="col-6">
+            <p>致敬 https://randomuser.me/ 資料呈現版型</p>
+          </div>
+          <button class="col-1 btn btn-outline-secondary" @click="changePeople">
+            <i class="bi bi-arrow-counterclockwise"></i>
+          </button>
+        </div>
+        <div class="row mb-5">
+          <div class="card col-6" v-for="person in people">
+            <div class="details">
+              <div class="user_photo horizontal_center" id="user_photo">
+                <img :src="person.picture.large" />
+              </div>
+              <p class="user_title">{{ person.title }}</p>
+              <p class="user_value">{{ person.bigTitle }}</p>
+            </div>
+            <ul class="values_list" id="values_list">
+              <li
+                data-title="Hi, My name is"
+                :data-value="`${person.name.title} ${person.name.first} ${person.name.last}`"
+                data-label="name"
+                @mouseover="changeTitle"
+              ></li>
+              <li
+                data-title="My email address is"
+                :data-value="person.email"
+                data-label="email"
+                data-caps="false"
+                @mouseover="changeTitle"
+              ></li>
+              <li
+                data-title="My birthday is"
+                :data-value="person.dob.date.split('T')[0].replaceAll('-', '/')"
+                data-label="birthday"
+                @mouseover="changeTitle"
+              ></li>
+              <li
+                data-title="My address is"
+                :data-value="`${person.location.street.number} ${person.location.street.name}`"
+                data-label="location"
+                @mouseover="changeTitle"
+              ></li>
+              <li
+                data-title="My phone number is"
+                :data-value="person.cell"
+                data-label="phone"
+                @mouseover="changeTitle"
+              ></li>
+              <li
+                data-title="My password is"
+                :data-value="person.login.password"
+                data-label="pass"
+                data-caps="false"
+                @mouseover="changeTitle"
+              ></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>
