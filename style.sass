@@ -1,0 +1,26 @@
+$primary: rgb(65,184,131)
+$secondary: rgb(53, 73, 94)
+
+body
+  background: $primary
+
+.card
+  border: solid 10px $secondary
+  border-radius: 1rem
+
+a
+  color: $primary
+  &:hover
+    color: $secondary
+
+.btn-outline-primary
+  color: $primary
+  border-color: $primary
+  &:hover, &:active
+    color: white
+    background-color: $primary
+    border-color: $primary
+  &:focus, &:focus:active
+    box-shadow: 0 0 0 .25rem rgba(65,184,131, 0.5)
+  &:disabled
+    color: $primary
