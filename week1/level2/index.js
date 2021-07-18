@@ -25,6 +25,9 @@ createApp({
       });
     },
     changePeople() {
+      const lis = document.querySelectorAll('li');
+      lis.forEach((li) => li.classList.remove('active'));
+
       fetch('https://randomuser.me/api/?results=8')
         .then((response) => response.json())
         .then((json) => (this.people = json.results))

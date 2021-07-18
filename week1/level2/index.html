@@ -22,16 +22,28 @@
   <body>
     <div id="app">
       <div class="container">
-        <div class="row justify-content-between mt-5 mb-5">
-          <div class="col-6">
-            <p>致敬 https://randomuser.me/ 資料呈現版型</p>
+        <div class="row justify-content-between mt-3 mb-3 mt-md-5 mb-md-5">
+          <div class="col-10 col-md-6">
+            <p>
+              致敬
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://randomuser.me/"
+                >https://randomuser.me/</a
+              >
+              資料呈現版型
+            </p>
           </div>
-          <button class="col-1 btn btn-outline-secondary" @click="changePeople">
+          <button
+            class="col-auto btn btn-outline-secondary"
+            @click="changePeople"
+          >
             <i class="bi bi-arrow-counterclockwise"></i>
           </button>
         </div>
         <div class="row mb-5">
-          <div class="card col-6" v-for="person in people">
+          <div class="card col-12 col-lg-6" v-for="person in people">
             <div class="details">
               <div class="user_photo horizontal_center" id="user_photo">
                 <img :src="person.picture.large" />
