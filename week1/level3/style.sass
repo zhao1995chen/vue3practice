@@ -1,0 +1,39 @@
+$primary: rgb(65,184,131)
+$secondary: rgb(53, 73, 94)
+$form-check-label-color: $secondary
+
+body
+  background: $primary
+
+.form
+  padding: 1.5rem
+  border-radius: 1rem
+  background: white
+  border: solid 10px $secondary
+  .form-check-input
+    margin-left: 0
+  .form-check-label
+    margin-left: 1.5rem
+
+.card
+  border: solid 10px $secondary
+  border-radius: 1rem
+  img
+    border-radius: 50%
+
+a
+  color: $primary
+  &:hover
+    color: $secondary
+
+.btn-outline-primary
+  color: $primary
+  border-color: $primary
+  &:hover, &:active
+    color: white
+    background-color: $primary
+    border-color: $primary
+  &:focus, &:focus:active
+    box-shadow: 0 0 0 .25rem lighten($primary, 30%)
+  &:disabled
+    color: $primary

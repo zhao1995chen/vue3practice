@@ -1,0 +1,56 @@
+body {
+  background: #41b883;
+}
+
+.form {
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background: white;
+  border: solid 10px #35495e;
+}
+
+.form .form-check-input {
+  margin-left: 0;
+}
+
+.form .form-check-label {
+  margin-left: 1.5rem;
+}
+
+.card {
+  border: solid 10px #35495e;
+  border-radius: 1rem;
+}
+
+.card img {
+  border-radius: 50%;
+}
+
+a {
+  color: #41b883;
+}
+
+a:hover {
+  color: #35495e;
+}
+
+.btn-outline-primary {
+  color: #41b883;
+  border-color: #41b883;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:active {
+  color: white;
+  background-color: #41b883;
+  border-color: #41b883;
+}
+
+.btn-outline-primary:focus, .btn-outline-primary:focus:active {
+  -webkit-box-shadow: 0 0 0 0.25rem #afe3cc;
+          box-shadow: 0 0 0 0.25rem #afe3cc;
+}
+
+.btn-outline-primary:disabled {
+  color: #41b883;
+}
+/*# sourceMappingURL=style.css.map */
