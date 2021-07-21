@@ -5,7 +5,6 @@ Vue.createApp({
       num2: null,
       isActive: '',
       result: 0,
-      count: 0,
       localStorage:
         localStorage.getItem('result') !== null
           ? localStorage.getItem('result').split(',')
