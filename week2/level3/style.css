@@ -1,0 +1,10 @@
+html, body {
+  height: 100%;
+}
+
+html .form-control, html .btn, body .form-control, body .btn {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: .3rem;
+}
+/*# sourceMappingURL=style.css.map */
