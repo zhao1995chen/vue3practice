@@ -27,12 +27,19 @@ Vue.createApp({
         id: new Date().getTime(),
         value: this.getResult(),
       };
-      this.localStorage.push(result);
-      if (this.localStorage.length > 10) this.localStorage.shift();
+      this.localStorage.unshift(result);
+      if (this.localStorage.length > 10) this.localStorage.pop();
       storage.set(this.localStorage);
     },
     getResult() {
-      if (this.num1 === null || this.num2 === null) return '請輸入數字';
+      console.log(this.num1, this.num2);
+      if (
+        this.num1 === null ||
+        this.num1 === '' ||
+        this.num2 === null ||
+        this.num1 === ''
+      )
+        return '請輸入數字';
       let s = '';
       switch (this.isActive) {
         case 'add':
@@ -56,9 +63,12 @@ Vue.createApp({
       }
       return s;
     },
-    delete(id) {
+    remove(id) {
+      console.log(this.localStorage.find((item) => item.id === id));
       this.localStorage.splice(
-        this.localStorage.find((item) => item.id === id),
+        this.localStorage.indexOf(
+          this.localStorage.find((item) => item.id === id)
+        ),
         1
       );
       console.log(this.localStorage);
