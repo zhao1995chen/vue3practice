@@ -1,6 +1,6 @@
 const storage = {
   set(data) {
-    localStorage.setItem('result', JSON.stringify({data}));
+    localStorage.setItem('result', JSON.stringify(data));
   },
   get() {
     return localStorage.getItem('result') !== undefined &&
