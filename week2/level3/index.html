@@ -97,11 +97,14 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 col-md-6" v-for="item in localStorage">
+          <div
+            class="col-12 col-md-6"
+            v-for="item in localStorage"
+            :key="item.id"
+          >
             <div
               class="alert alert-dismissible fade show"
               :class="`alert-${style[Math.floor(Math.random() * style.length)]}`"
-              :key="item.id"
             >
               {{item.value}}
               <button

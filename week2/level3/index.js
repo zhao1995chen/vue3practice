@@ -23,6 +23,16 @@ Vue.createApp({
   },
   methods: {
     compute() {
+      const result = {
+        id: new Date().getTime(),
+        value: this.getResult(),
+      };
+      this.localStorage.push(result);
+      if (this.localStorage.length > 10) this.localStorage.shift();
+      storage.set(this.localStorage);
+    },
+    getResult() {
+      if (this.num1 === null || this.num2 === null) return '請輸入數字';
       let s = '';
       switch (this.isActive) {
         case 'add':
@@ -41,14 +51,10 @@ Vue.createApp({
           this.result = this.num1 / this.num2;
           s = `${this.num1} / ${this.num2} = ${this.result}`;
           break;
+        default:
+          s = '沒有選擇運算模式';
       }
-      const result = {
-        id: new Date().getTime(),
-        value: s,
-      };
-      this.localStorage.push(result);
-      if (this.localStorage.length > 10) this.localStorage.shift();
-      storage.set(this.localStorage);
+      return s;
     },
     delete(id) {
       this.localStorage.splice(
