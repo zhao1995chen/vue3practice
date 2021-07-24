@@ -1,3 +1,15 @@
+const storage = {
+  set(data) {
+    localStorage.setItem('result', JSON.stringify({data}));
+  },
+  get() {
+    return localStorage.getItem('result') !== undefined &&
+      localStorage.getItem('result') !== null
+      ? JSON.parse(localStorage.getItem('result')).data
+      : [];
+  },
+};
+
 Vue.createApp({
   data() {
     return {
@@ -5,10 +17,7 @@ Vue.createApp({
       num2: null,
       isActive: '',
       result: 0,
-      localStorage:
-        localStorage.getItem('result') !== null
-          ? localStorage.getItem('result').split(',')
-          : [],
+      localStorage: storage.get(),
       style: ['primary', 'secondary', 'success', 'danger', 'warning', 'info'],
     };
   },
@@ -33,16 +42,28 @@ Vue.createApp({
           s = `${this.num1} / ${this.num2} = ${this.result}`;
           break;
       }
-      this.localStorage.push(s);
+      const result = {
+        id: new Date().getTime(),
+        value: s,
+      };
+      this.localStorage.push(result);
       if (this.localStorage.length > 10) this.localStorage.shift();
-      localStorage.setItem('result', this.localStorage);
+      storage.set(this.localStorage);
+    },
+    delete(id) {
+      this.localStorage.splice(
+        this.localStorage.find((item) => item.id === id),
+        1
+      );
+      console.log(this.localStorage);
+      storage.set(this.localStorage);
+    },
+    clear() {
+      this.localStorage = [];
+      storage.set(this.localStorage);
     },
   },
-  mounted() {},
+  mounted() {
+    console.log(this.localStorage);
+  },
 }).mount('#app');
-
-// BUG Error for NaN
-// BUG 先乘除後加減導致的運算錯誤
-// TODO 大數運算
-// TODO alert close and remove from localStorage
-// TODO localStorage 正確的儲存型態

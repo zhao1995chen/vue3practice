@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="app" class="h-100 d-flex mt-5">
+    <div id="app" class="h-100 d-flex pt-5">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-12">
@@ -86,22 +86,31 @@
             <h4 class="result m-4 fs-1 text-end">結果：{{ result }}</h4>
           </div>
         </div>
-        <h5 class="m-4 fs-1">歷史紀錄</h5>
+        <div class="row mb-4">
+          <div class="col-6">
+            <h5 class="fs-1">歷史紀錄</h5>
+          </div>
+          <div class="col-6 d-flex justify-content-end">
+            <button type="button" class="btn btn-outline-danger" @click="clear">
+              CLEAR ALL
+            </button>
+          </div>
+        </div>
         <div class="row">
           <div class="col-12 col-md-6" v-for="item in localStorage">
             <div
               class="alert alert-dismissible fade show"
               :class="`alert-${style[Math.floor(Math.random() * style.length)]}`"
-              :key="item"
+              :key="item.id"
             >
-              {{item}}
-              <!-- <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-              @click=""
-            ></button> -->
+              {{item.value}}
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close"
+                @click="delete(item.id)"
+              ></button>
             </div>
           </div>
         </div>
